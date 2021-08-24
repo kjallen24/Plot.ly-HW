@@ -38,12 +38,23 @@ function createchart(dValue){
 
     Plotly.newPlot("bubble",mydata,mylayout);
   });
+}
 
+
+function createMetadata(dValue){
+  d3.json("samples.json").then((data)=>{
+    var mymetadata = data.metadata;
+    var resultarray = mymetadata.filter( myobjects=> myobjects.id == dValue);
+    var myresult = resultarray[0];
+    var mysmallwindow = d3.select("#sample-metadata");
+    mysmallwindow.html("");
+  }
 
 }
 
 function optionChanged(dValue){
   createchart(dValue);
+  createMetadata(dValue);
 }
 
 
@@ -58,6 +69,8 @@ function initialize(){
       
     var sample1 = samplesnames[0];
     createchart(sample1);
+
+    createMetadata(sample1);
   });
 }
 initialize();
