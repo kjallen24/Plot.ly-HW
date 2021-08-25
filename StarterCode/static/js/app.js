@@ -68,7 +68,7 @@ function createMetadata(dValue){//function for demographic window w/ metadata
   });
 }
 
-function optionChanged(dValue){
+function optionChanged(dValue){// function for when OTUID is changed, the plots/window changes accordingly
   createchart(dValue);
   createMetadata(dValue);
 }
@@ -80,7 +80,7 @@ function initialize(){
 
     var samplesnames = data.names;
     samplesnames.forEach((sample)=>{
-      celldropdown.append("option").text(sample).property("value",sample);
+      celldropdown.append("option").text(sample).property("value",sample);//adding ea. iteration to dropdown option
     });
       
     var sample1 = samplesnames[0];
