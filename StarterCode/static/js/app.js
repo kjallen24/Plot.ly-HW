@@ -1,6 +1,6 @@
 //Use D3 Library to read in samples.json
 
-function createchart(dValue){
+function createchart(dValue){ // function to create charts
   d3.json("samples.json").then((data)=>{
     var mysamples = data.samples;
     var resultarray = mysamples.filter( myobjects=> myobjects.id == dValue);
