@@ -13,16 +13,31 @@ function createchart(dValue){
     var otu_ids = myresult.otu_ids;
     var otu_labels = myresult.otu_labels;
     var sample_values= myresult.sample_values;
+    
+    var bargraph = {
+      x: sample_values,
+      y: otu_ids.value,
+      type: "bar"
+    };
 
-    var mylayout = {
+    var bardata = [bargraph];
+
+    var barlayout = {
+        title: "Sample Value Chart",
+        xaxis: { title: "Sample Values"},
+        yaxis: { title: "OTU IDs"},
+    };
+
+    var bubblelayout = {
       title: "BellyButton Bubble Chart",
       margin: {t:0},
       hovermode: "closest",
-      xaxis: {title: "otu_ids"},
+      xaxis: {title: "OTU IDs"},
+      yaxis: {title: "Sample Values"},
       margin: {t:30}
     };
 
-    var mydata = [
+    var bubbledata = [
       {
         x: otu_ids,
         y: sample_values,
@@ -31,15 +46,15 @@ function createchart(dValue){
           size: sample_values,
           color: otu_ids,
           colorscale: "earth",
+          hovertext: otu_labels,
 
         }
       }
     ];
-
-    Plotly.newPlot("bubble",mydata,mylayout);
+    Plotly.newPlot("bar",bardata,barlayout);
+    Plotly.newPlot("bubble",bubbledata,bubblelayout);
   });
 }
-
 
 function createMetadata(dValue){
   d3.json("samples.json").then((data)=>{
