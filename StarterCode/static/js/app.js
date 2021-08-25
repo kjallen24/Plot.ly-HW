@@ -26,7 +26,7 @@ function createchart(dValue){ // function to create charts
         margin: {t:30}
     };
 
-    var bubblelayout = {//bubble graph setup
+    var bubblelayout = {//bubble graph set up
       title: "BellyButton Bubble Chart",
       margin: {t:20},
       hovermode: otu_labels,
