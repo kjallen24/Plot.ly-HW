@@ -45,11 +45,14 @@ function createMetadata(dValue){
   d3.json("samples.json").then((data)=>{
     var mymetadata = data.metadata;
     var resultarray = mymetadata.filter( myobjects=> myobjects.id == dValue);
-    var myresult = resultarray[0];
+    var myresults = resultarray[0];
     var mysmallwindow = d3.select("#sample-metadata");
     mysmallwindow.html("");
-  }
 
+    Object.entries(myresults).forEach(([k,v])=>{
+      mysmallwindow.append("h6").text(`${k}:${v}`);
+    });
+  });
 }
 
 function optionChanged(dValue){
