@@ -50,7 +50,7 @@ function createchart(dValue){ // function to create charts
       }
     ];
     Plotly.newPlot("bar",bardata,barlayout);//display bar graph
-    Plotly.newPlot("bubble",bubbledata,bubblelayout);
+    Plotly.newPlot("bubble",bubbledata,bubblelayout);//diaply bubble graph
   });
 }
 
