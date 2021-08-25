@@ -1,10 +1,5 @@
 //Use D3 Library to read in samples.json
 
-
-//Create Horizontal BarChart w/ drp menu
-//// use sample_values as barchart values, otu_ids as labels for barchart and otu_labels as hovertext for barchart
-
-//Create bubble chat that displays: Use otu_ids for the x values.
 function createchart(dValue){
   d3.json("samples.json").then((data)=>{
     var mysamples = data.samples;
