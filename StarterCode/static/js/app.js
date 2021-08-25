@@ -24,17 +24,20 @@ function createchart(dValue){
 
     var barlayout = {
         title: "Sample Value Chart",
+        margin: {t:0},
+        hovermode: "closest",
         xaxis: { title: "Sample Values"},
         yaxis: { title: "OTU IDs"},
+        margin: {t:30}
     };
 
     var bubblelayout = {
       title: "BellyButton Bubble Chart",
-      margin: {t:0},
-      hovermode: "closest",
+      margin: {t:20},
+      hovermode: otu_labels,
       xaxis: {title: "OTU IDs"},
       yaxis: {title: "Sample Values"},
-      margin: {t:30}
+      margin: {t:50}
     };
 
     var bubbledata = [
