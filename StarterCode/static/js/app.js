@@ -22,7 +22,7 @@ function createchart(dValue){ // function to create charts
         margin: {t:0},
         hovermode: "closest",
         xaxis: { title: "Sample Values"},
-        yaxis: { title: "OTU IDs"},
+        yaxis: otu_ids, //couldn't figure out how to return otu label name as the scale on y axis
         margin: {t:30}
     };
 
@@ -50,11 +50,11 @@ function createchart(dValue){ // function to create charts
       }
     ];
     Plotly.newPlot("bar",bardata,barlayout);//display bar graph
-    Plotly.newPlot("bubble",bubbledata,bubblelayout);//diaply bubble graph
+    Plotly.newPlot("bubble",bubbledata,bubblelayout);//display bubble graph
   });
 }
 
-function createMetadata(dValue){
+function createMetadata(dValue){//function for demographic window w/ metadata
   d3.json("samples.json").then((data)=>{
     var mymetadata = data.metadata;
     var resultarray = mymetadata.filter( myobjects=> myobjects.id == dValue);
