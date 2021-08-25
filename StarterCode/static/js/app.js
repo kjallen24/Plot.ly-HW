@@ -9,7 +9,7 @@ function createchart(dValue){ // function to create charts
     var otu_labels = myresult.otu_labels;
     var sample_values= myresult.sample_values;
     
-    var bargraph = {
+    var bargraph = { //bargraph set up
       x: sample_values,
       y: otu_ids.value,
       type: "bar"
